@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.updateBtn.setOnClickListener {
-
+            startActivity(Intent(this@MainActivity,UpdateActivity::class.java))
+            finish()
         }
 
         binding.deleteBtn.setOnClickListener {
