@@ -5,6 +5,9 @@ plugins {
 }
 
 android {
+    buildFeatures{
+        viewBinding = true
+    }
     namespace = "com.raihan.studentmanagementclient"
     compileSdk = 34
 

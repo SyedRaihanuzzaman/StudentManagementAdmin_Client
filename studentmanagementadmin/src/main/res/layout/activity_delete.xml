@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#9DCBC7"
-    tools:context=".MainActivity">
+    tools:context=".DeleteActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Search Student"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="Delete Student"
         android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -21,17 +22,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Student Panel"
+        android:text="Admin Panel"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="100dp"
@@ -40,9 +41,8 @@
         android:src="@drawable/img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.012"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="100dp"
@@ -54,33 +54,31 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="296dp"
-        android:background="@drawable/background"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:id="@+id/constraintLayout"
+        style="@style/Widget.Material3.CardView.Outlined"
+        android:layout_width="0dp"
+        android:layout_height="520dp"
+        android:background="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="56dp"
             android:hint="Name"
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
 
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/snameEtxt"
+                android:id="@+id/dnameEtxt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp">
@@ -102,7 +100,7 @@
             app:layout_constraintTop_toBottomOf="@id/layout1">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/sphoneEtxt"
+                android:id="@+id/dphoneEtxt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp">
@@ -113,25 +111,110 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/searchBtn"
-            android:layout_width="250dp"
+       <!-- <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:hint="Name"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/layout1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEtxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>-->
+
+      <!--  <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEtxt"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/layout3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneEtxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subject"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout4">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subjectEtxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
             android:backgroundTint="#9CCAC6"
-            android:text="Search"
+            android:text="Delete"
             app:cornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/layout4"
-            app:layout_constraintStart_toStartOf="@+id/layout4"
             app:layout_constraintTop_toBottomOf="@+id/layout4"
             app:strokeColor="#171515"
-            app:strokeWidth="2dp" />
+            app:strokeWidth="2dp"
+            tools:layout_editor_absoluteX="24dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/img_2"
@@ -140,32 +223,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.234" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_height="0dp"
-        android:background="@drawable/text_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:hint="Batch"
-            android:textColorHint="@color/black"
-            android:gravity="center_vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+        app:layout_constraintVertical_bias="0.242" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

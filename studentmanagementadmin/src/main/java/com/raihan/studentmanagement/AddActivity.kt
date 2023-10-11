@@ -1,5 +1,6 @@
 package com.raihan.studentmanagement
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,6 +34,8 @@ class AddActivity : AppCompatActivity() {
                     binding.phoneEtxt.text?.clear()
                     binding.subjectEtxt.text?.clear()
                     Toast.makeText(this@AddActivity,"Saved", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@AddActivity,MainActivity::class.java))
+                    finish()
                 }
                 .addOnFailureListener {
                     Toast.makeText(this@AddActivity,"Failed",Toast.LENGTH_SHORT).show()

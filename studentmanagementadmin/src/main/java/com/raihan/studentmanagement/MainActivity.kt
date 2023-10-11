@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.deleteBtn.setOnClickListener {
-
+            startActivity(Intent(this@MainActivity,DeleteActivity::class.java))
+            finish()
         }
     }
 }
