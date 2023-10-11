@@ -2,6 +2,7 @@ package com.raihan.studentmanagement
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.raihan.studentmanagement.databinding.ActivityAddBinding
@@ -24,6 +25,18 @@ class AddActivity : AppCompatActivity() {
             database = FirebaseDatabase.getInstance().getReference("Students")
 
             val student = Student(batch,name,email,phone,subject)
+            database.child(name+phone).setValue(student)
+                .addOnSuccessListener {
+                    binding.batchEtxt.text?.clear()
+                    binding.nameEtxt.text?.clear()
+                    binding.emailEtxt.text?.clear()
+                    binding.phoneEtxt.text?.clear()
+                    binding.subjectEtxt.text?.clear()
+                    Toast.makeText(this@AddActivity,"Saved", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this@AddActivity,"Failed",Toast.LENGTH_SHORT).show()
+                }
         }
     }
 }
